@@ -22,7 +22,7 @@ A site to help organize Vendors and their orders.
 1. Clone this repository to your desktop using git clone
 
 ```
-git clone https://github.com/jfox25/BakeryVendor
+git clone https://github.com/jfox25/BakeryVendor.Solution
 ```
 
 2. cd into Project
@@ -79,7 +79,7 @@ dotnet run
 
 ## GitHub Link
 
-[Link to Code on GitHub](https://github.com/jfox25/BakeryVendor)
+[Link to Code on GitHub](https://github.com/jfox25/BakeryVendor.Solution)
 
 ## Bugs
 
