@@ -25,10 +25,15 @@ A site to help organize Vendors and their orders.
 git clone https://github.com/jfox25/BakeryVendor
 ```
 
-2. Open Project in VS Code
+2. cd into Project
 
 ```
-cd BakeryVendor.Solution
+cd BakeryVendor
+```
+
+3. Open in VS Code
+
+```
 code .
 ```
 
