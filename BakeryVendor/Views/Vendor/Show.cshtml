@@ -25,7 +25,7 @@ else
     @foreach (Order order in @Model.Orders)
     {
       <ul class="verticle-list">
-        <li><a href="/orders/@order.Id">@order.Title</a></li>
+        <li><a href="/orders/show/@order.Id">@order.Title</a></li>
         <li>@order.DateCreated</li>
         <li><span class="money">$@order.Cost</span></li>
       </ul>
@@ -34,6 +34,6 @@ else
   </ul>
 }
 <div class="button-group">
-  <a class="button" href="/orders/new">Create a New Order</a>
-  <a class="button-home" href="/">Home</a>
+  <a class="button" href="/orders/new/@Model.Id">Create a New Order</a>
+  <a class="button-home" href="/vendors">Back</a>
 </div>

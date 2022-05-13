@@ -10,7 +10,14 @@
     <select name="orderVendor" id="orderVendor">
       @foreach (Vendor vendor in @Model)
       {
-        <option value="@vendor.Id">@vendor.Name</option>
+        @if(ViewBag.VendorId != vendor.Id)
+        {
+          <option value="@vendor.Id">@vendor.Name</option>
+        }
+        else 
+        {
+          <option selected value="@vendor.Id">@vendor.Name</option>
+        }
       }
     </select>
   </div>
@@ -22,5 +29,9 @@
     <label for="orderCost">Cost of Order</label>
     <input id="orderCost" name="orderCost" type="number">
   </div>
+  @if(ViewBag.VendorId != 0)
+  {
+    <input id="returnToVendor" name="returnToVendor" value="true" type="hidden">
+  }
   <button type="submit">Add Order</button>
 </form>

@@ -10,6 +10,31 @@
 }
 else
 {
+  <form action="/orders/filter" method="post">
+    @if(@ViewBag.VendorId == 0)
+    {
+      <p class="blue" style="font-size: 24px;">No Filters</p>
+    }
+    else
+    {
+      <p class="blue" style="font-size: 24px;">Filtering</p>
+    }
+    <select name="vendorId" id="vendorId">
+      <option value="0">No Filters</option>
+      @foreach (Vendor vendor in @ViewBag.vendors)
+      {
+        @if(@ViewBag.VendorId != vendor.Id)
+        {
+          <option value="@vendor.Id">@vendor.Name</option>
+        }
+        else 
+        {
+          <option selected value="@vendor.Id">@vendor.Name</option>
+        }
+      }
+    </select>
+    <button type="submit">Filter</button>
+  </form>
   <ul>
   <ul class="verticle-list table-heading">
       <li>Order</li>
@@ -19,7 +44,7 @@ else
   @foreach (Order order in @Model)
   {
     <ul class="verticle-list">
-      <li><a href="/orders/@order.Id">@order.Title</a></li>
+      <li><a href="/orders/show/@order.Id">@order.Title</a></li>
       <li><a href="/vendors/@order.Vendor.Id">@order.Vendor.Name</a></li>
       <li><span class="money">$@order.Cost</span></li>
     </ul>
@@ -30,10 +55,11 @@ else
   @if(Vendor.GetAll().Count == 0)
   {
     <p>You need to add a Vendor before you can add orders</p>
+    <a class="button" href="/vendors/new">Add a Vendor</a>
   }
   else 
   {
-    <a class="button" href="/orders/new">Add an Order</a>
+    <a class="button" href="/orders/new/0">Add an Order</a>
   }
-  <a class="button-home" href="/">Home</a>
+  <a class="button-home" href="/">Back</a>
 </div>

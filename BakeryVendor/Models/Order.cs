@@ -27,6 +27,18 @@ namespace BakeryVendor.Models
       IsPaid = false;
     }
 
+    public static List<Order> FilterOrders(int vendorId)
+    {
+      List<Order> filteredOrders = new List<Order>{};
+      foreach (Order order in _orders)
+      {
+        if(order.Vendor.Id == vendorId)
+        {
+          filteredOrders.Add(order);
+        }
+      }
+      return filteredOrders;
+    }
     public static List<Order> GetAll()
     {
       return _orders;
