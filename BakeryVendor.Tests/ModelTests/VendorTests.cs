@@ -45,5 +45,17 @@ namespace BakeryVendor.Tests
       int totalCost = vendor.CalculateTotalCost();
       Assert.AreEqual(525, totalCost);
     }
+    [TestMethod]
+    public void RemoveVendor_RemovesCorrectVendor_Vendors()
+    {
+      Vendor vendor = new Vendor("James", "Aerospace");
+      Order order = new Order(vendor, "Order#1", 250);
+      Order order2 = new Order(vendor, "Order#2", 275);
+      Vendor vendor2 = new Vendor("Jake", "Statefarm");
+      Assert.AreEqual(2, vendor.Orders.Count);
+      Vendor.RemoveVendor(vendor);
+      List<Vendor> vendorList = Vendor.GetAll();
+      Assert.AreEqual(1, vendorList.Count);
+    }
   }
 }
