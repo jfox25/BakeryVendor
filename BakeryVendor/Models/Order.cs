@@ -15,6 +15,7 @@ namespace BakeryVendor.Models
     public Order(Vendor vendor, string title, int cost)
     {
       _orders.Add(this);
+      vendor.Orders.Add(this);
       Vendor = vendor;
       Id = _orders.Count;
       Title = title;

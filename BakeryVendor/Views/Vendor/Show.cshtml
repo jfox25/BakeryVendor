@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+@using BakeryVendor.Models
+
+<h1>Vendor: @Model.Name</h1>
+<h3>Description of Vendor: @Model.Description</h3>
+<h3>Total Number of Orders: $@Model.Orders.Count</h3>
+<h3>Total Cost of Orders: $@Model.CalculateTotalCost()</h3>
+<h1>Orders for @Model.Name</h1>
+@if(@Model.Orders.Count == 0)
+{
+  <p>There are no Orders for this Vendor</p>
+}
+<ul>
+  @foreach (Order order in @Model.Orders)
+  {
+    <li><a href="/orders/@order.Id">@order.Title</a> Cost: $@order.Cost</li>
+  }
+</ul>
+<a href="/orders/new">Create a New Order</a>

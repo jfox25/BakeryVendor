@@ -37,5 +37,15 @@ namespace BakeryVendor.Models
     {
       Orders.Add(order);
     }
+    
+    public int CalculateTotalCost()
+    {
+      int total = 0;
+      foreach (Order order in Orders)
+      {
+        total += order.Cost;
+      }
+      return total;
+    }
   }
 }
