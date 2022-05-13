@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+@using BakeryVendor.Models;
+
+<h1>Orders</h1>
+@if(@Model.Count == 0)
+{
+  <p>There are no Orders Yet</p>
+}
+<ul>
+  @foreach (Order order in @Model)
+  {
+    <ul class="verticle-list">
+      <li>@order.Title</li>
+      <li><a href="/vendors/@order.Vendor.Id">Vendor: @order.Vendor.Name</a></li>
+      <li>Cost: $@order.Cost</li>
+    </ul>
+  }
+</ul>
+<a href="/orders/new">Add an Order</a>

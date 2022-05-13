@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+@using BakeryVendor.Models
+
+<h1>Order #@Model.Id</h1>
+<h3><a href="/vendors/@Model.Vendor.Id">Vendor: @Model.Vendor.Name</a></h3>
+<h3>Order Title: @Model.Title</h3>
+<h3>Order Cost: $@Model.Cost</h3>
+<h3>Date Created: @Model.DateCreated</h3>
+<a href="/orders">View All Orders</a>
+

@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Add an Order</h1>
+@using BakeryVendor.Models;
+<form action="/orders" method="post">
+  <label for="orderVendor">Vendor</label>
+  <select name="orderVendor" id="orderVendor">
+    @foreach (Vendor vendor in @Model)
+    {
+      <option value="@vendor.Id">@vendor.Name</option>
+    }
+  </select>
+  <label for="orderTitle">Title of Order</label>
+  <input id="orderTitle" name="orderTitle" type="text">
+  <label for="orderCost">Cost of Order</label>
+  <input id="orderCost" name="orderCost" type="number">
+  <button type="submit">Add Order</button>
+</form>
