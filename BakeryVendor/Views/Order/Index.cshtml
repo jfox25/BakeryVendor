@@ -12,10 +12,18 @@
   @foreach (Order order in @Model)
   {
     <ul class="verticle-list">
-      <li>@order.Title</li>
+      <li><a href="/orders/@order.Id">@order.Title</a></li>
       <li><a href="/vendors/@order.Vendor.Id">Vendor: @order.Vendor.Name</a></li>
       <li>Cost: $@order.Cost</li>
     </ul>
   }
 </ul>
-<a href="/orders/new">Add an Order</a>
+@if(Vendor.GetAll().Count == 0)
+{
+  <p>You need to add a Vendor before you can add orders</p>
+}
+else 
+{
+  <a href="/orders/new">Add an Order</a>
+}
+<a href="/">Home</a>
