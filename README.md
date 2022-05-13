@@ -28,7 +28,7 @@ git clone https://github.com/jfox25/BakeryVendor
 2. cd into Project
 
 ```
-cd BakeryVendor
+cd BakeryVendor.Solution
 ```
 
 3. Open in VS Code
