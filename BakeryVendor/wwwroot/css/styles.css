@@ -138,3 +138,41 @@ form div {
   width: 80%;
   margin: auto;
 }
+.vendor-list li {
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+.delete-form {
+  width: 20px;
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+.delete-form button {
+  border-radius: 50%;
+  width: 20px;
+  text-align: center;
+  font-size: 10px;
+  margin: auto;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.updateForm {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  width: 100px;
+}
+.updateForm button {
+  width: 100px;
+  margin: 0;
+}
+.inline-para {
+  display: inline-block;
+  margin: 0;
+}

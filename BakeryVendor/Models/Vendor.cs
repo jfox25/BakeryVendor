@@ -9,10 +9,12 @@ namespace BakeryVendor.Models
     public string Description { get; set; }
     public List<Order> Orders { get; set; }
 
+    private static int _idCount = 0;
     public Vendor(string name, string description)
     {
+      _idCount++;
       _vendors.Add(this);
-      Id = _vendors.Count;
+      Id = _idCount;
       Name = name;
       Description = description;
       Orders = new List<Order>{};
@@ -21,6 +23,7 @@ namespace BakeryVendor.Models
     public static void ClearAll()
     {
       _vendors.Clear();
+      _idCount = 0;
     }
 
     public static List<Vendor> GetAll()
@@ -30,9 +33,23 @@ namespace BakeryVendor.Models
 
     public static Vendor Find(int searchId)
     {
-      return _vendors[searchId-1];
+      foreach (Vendor vendor in _vendors)
+      {
+        if(vendor.Id == searchId)
+        {
+          return vendor;
+        }
+      }
+      return null;
     }
-
+    public static void RemoveVendor(Vendor vendor)
+    {
+      _vendors.Remove(vendor);
+      foreach (Order order in vendor.Orders)
+      {
+        Order.RemoveOrder(order);
+      }
+    }
     public void AddOrder(Order order)
     {
       Orders.Add(order);

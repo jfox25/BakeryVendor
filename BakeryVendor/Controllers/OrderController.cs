@@ -35,5 +35,13 @@ namespace BakeryVendor.Controllers
         Order order = Order.Find(id);
         return View(order);
       }
+
+      [HttpPost("/orders/update/{id}")]
+      public ActionResult Update(int id)
+      {
+        Order order = Order.Find(id);
+        order.IsPaid = true;
+        return Redirect($"/orders/{order.Id}");
+      }
     }
 }

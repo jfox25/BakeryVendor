@@ -8,10 +8,15 @@
 {
   <p>There are no Vendors Yet</p>
 }
-<ul>
+<ul class="vendor-list">
   @foreach (Vendor vendor in @Model)
   {
-    <li><a href="/vendors/@vendor.Id">@vendor.Name</a></li>
+    <li>
+      <a href="/vendors/@vendor.Id">@vendor.Name</a>
+      <form class="delete-form" action="/vendors/delete/@vendor.Id" method="post">
+        <button class="delete-button" type="submit" name="button">X</button>
+      </form>
+    </li>
   }
 </ul>
 <div class="button-group">

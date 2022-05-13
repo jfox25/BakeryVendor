@@ -32,5 +32,13 @@ namespace BakeryVendor.Controllers
         Vendor vendor = Vendor.Find(id);
         return View(vendor);
       }
+
+      [HttpPost("/vendors/delete/{id}")]
+      public ActionResult Delete(int id)
+      {
+        Vendor vendor = Vendor.Find(id);
+        Vendor.RemoveVendor(vendor);
+        return RedirectToAction("Index");
+      }
     }
 }
