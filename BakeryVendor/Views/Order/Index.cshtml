@@ -4,13 +4,7 @@
 @using BakeryVendor.Models;
 
 <h1>Orders</h1>
-@if(@Model.Count == 0)
-{
-  <p>There are no Orders Yet</p>
-}
-else
-{
-  <form action="/orders/filter" method="post">
+ <form action="/orders/filter" method="post">
     @if(@ViewBag.VendorId == 0)
     {
       <p class="blue" style="font-size: 24px;">No Filters</p>
@@ -35,6 +29,13 @@ else
     </select>
     <button type="submit">Filter</button>
   </form>
+@if(@Model.Count == 0)
+{
+  <p>There are no Orders Yet</p>
+}
+else
+{
+ 
   <ul>
   <ul class="verticle-list table-heading">
       <li>Order</li>
