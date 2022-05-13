@@ -1,0 +1,140 @@
+body {
+  font-size: 20px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  max-width: 1200px;
+}
+a {
+  text-decoration: none;
+  color: crimson;
+  font-weight: bolder;
+}
+a:hover {
+  color: rgb(174, 17, 49);
+}
+ul {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+a.button {
+  font-weight: normal;
+  background-color: crimson;
+  color: black;
+  padding: 6px 8px;
+  font-size: 17px;
+  border-radius: 5px;
+  margin-right: 15px;
+  border: none;
+}
+a.button:hover {
+  background-color: rgb(174, 17, 49);
+}
+a.button-home {
+  font-weight: normal;
+  background-color: rgb(197, 197, 197);
+  color: black;
+  padding: 6px 8px;
+  font-size: 17px;
+  border-radius: 5px;
+  border: none;
+}
+a.button-home:hover {
+  background-color: rgb(136, 133, 133);
+}
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  margin-right: 10px;
+}
+/* input {
+  display: inline-block;
+  float: left;
+  font-size: 15px;
+  padding: 3px;
+} */
+select {
+  padding: 3px;
+  font-size: 15px;
+}
+button {
+  display: inline-block;
+  width: 100px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: crimson;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 5px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgb(174, 17, 49);
+}
+.money {
+  color: green;
+}
+.primary {
+  color: crimson;
+}
+.blue {
+  color: blue;
+}
+.bold {
+  font-weight: bold;
+}
+/* Layout Css */
+#splash-page {
+  margin-top: 100px;
+}
+
+.button-group {
+  margin-top: 50px;
+  margin-bottom: 35px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: rgb(197, 197, 197) 3px solid;
+  width: 40%;
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+form div {
+  margin-top: 10px;
+}
+.verticle-list {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  border: 2px solid crimson;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.verticle-list li {
+  width: 30%;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+.table-heading {
+  border: none;
+  font-weight: bold;
+}
+.description {
+  border: rgb(197, 197, 197) 3px solid;
+  background-color: lightgrey;
+  font-size: 22px;
+  width: 80%;
+  margin: auto;
+}

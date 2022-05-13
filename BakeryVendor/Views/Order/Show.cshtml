@@ -3,11 +3,15 @@
 }
 @using BakeryVendor.Models
 
-<h1>Order #@Model.Id</h1>
-<h3><a href="/vendors/@Model.Vendor.Id">Vendor: @Model.Vendor.Name</a></h3>
-<h3>Order Title: @Model.Title</h3>
-<h3>Order Cost: $@Model.Cost</h3>
-<h3>Date Created: @Model.DateCreated</h3>
-<a href="/orders">View All Orders</a>
-<a href="/">Home</a>
+<h1 class="title">Order #@Model.Id</h1>
+<div class="description">
+  <p><a href="/vendors/@Model.Vendor.Id">Vendor: @Model.Vendor.Name</a></p>
+  <p>Order Title: <span class="bold">@Model.Title</span></p>
+  <p>Order Cost: <span class="money">$@Model.Cost</span></p>
+  <p>Date Created: <span class="bold">@Model.DateCreated</span></p>
+</div>
+<div class="button-group">
+  <a class="button" href="/orders">View All Orders</a>
+  <a class="button-home" href="/">Home</a>
+</div>
 

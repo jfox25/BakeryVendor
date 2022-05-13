@@ -3,20 +3,37 @@
 }
 @using BakeryVendor.Models
 
-<h1>Vendor: @Model.Name</h1>
-<h3>Description of Vendor: @Model.Description</h3>
-<h3>Total Number of Orders: @Model.Orders.Count</h3>
-<h3>Total Cost of Orders: $@Model.CalculateTotalCost()</h3>
-<h1>Orders for @Model.Name</h1>
+<h1 class="title">Vendor: <span class="primary">@Model.Name</span></h1>
+<div class="description">
+  <p>Description of Vendor: <span class="bold">@Model.Description</span></p>
+  <p>Total Number of Orders: <span class="blue">@Model.Orders.Count</span></p>
+  <p>Total Cost of Orders: <span class="money">$@Model.CalculateTotalCost()</span></p>
+</div>
+<h2 class="title">Orders for @Model.Name</h2>
 @if(@Model.Orders.Count == 0)
 {
   <p>There are no Orders for this Vendor</p>
 }
-<ul>
-  @foreach (Order order in @Model.Orders)
-  {
-    <li><a href="/orders/@order.Id">@order.Title</a> Cost: $@order.Cost</li>
-  }
-</ul>
-<a href="/orders/new">Create a New Order</a>
-<a href="/">Home</a>
+else
+{
+  <ul>
+    <ul class="verticle-list table-heading">
+      <li>Title</li>
+      <li>Date Created</li>
+      <li>Cost</li>
+    </ul>
+    @foreach (Order order in @Model.Orders)
+    {
+      <ul class="verticle-list">
+        <li><a href="/orders/@order.Id">@order.Title</a></li>
+        <li>@order.DateCreated</li>
+        <li><span class="money">$@order.Cost</span></li>
+      </ul>
+      
+    }
+  </ul>
+}
+<div class="button-group">
+  <a class="button" href="/orders/new">Create a New Order</a>
+  <a class="button-home" href="/">Home</a>
+</div>

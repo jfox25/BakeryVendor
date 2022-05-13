@@ -8,22 +8,32 @@
 {
   <p>There are no Orders Yet</p>
 }
-<ul>
+else
+{
+  <ul>
+  <ul class="verticle-list table-heading">
+      <li>Order</li>
+      <li>Vendor</li>
+      <li>Cost</li>
+  </ul>
   @foreach (Order order in @Model)
   {
     <ul class="verticle-list">
       <li><a href="/orders/@order.Id">@order.Title</a></li>
-      <li><a href="/vendors/@order.Vendor.Id">Vendor: @order.Vendor.Name</a></li>
-      <li>Cost: $@order.Cost</li>
+      <li><a href="/vendors/@order.Vendor.Id">@order.Vendor.Name</a></li>
+      <li><span class="money">$@order.Cost</span></li>
     </ul>
   }
 </ul>
-@if(Vendor.GetAll().Count == 0)
-{
-  <p>You need to add a Vendor before you can add orders</p>
 }
-else 
-{
-  <a href="/orders/new">Add an Order</a>
-}
-<a href="/">Home</a>
+<div class="button-group">
+  @if(Vendor.GetAll().Count == 0)
+  {
+    <p>You need to add a Vendor before you can add orders</p>
+  }
+  else 
+  {
+    <a class="button" href="/orders/new">Add an Order</a>
+  }
+  <a class="button-home" href="/">Home</a>
+</div>
